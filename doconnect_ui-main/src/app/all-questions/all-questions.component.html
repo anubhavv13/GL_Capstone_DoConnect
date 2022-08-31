@@ -1,0 +1,122 @@
+<!-- <br />
+<nav class="navbar container navbar-light bg-light">
+  <div class="container-fluid">
+    <button (click)="getQuestions('All')" class="btn btn-outline-dark">
+      All
+    </button>
+    <button (click)="getQuestions('Java')" class="btn btn-outline-secondary">
+      Java
+    </button>
+    <button (click)="getQuestions('Python')" class="btn btn-outline-secondary">
+      Python
+    </button>
+    <button (click)="getQuestions('Cloud')" class="btn btn-outline-secondary">
+      Cloud
+    </button>
+    <button (click)="getQuestions('Others')" class="btn btn-outline-secondary">
+      Others
+    </button>
+  </div>
+</nav>
+<div class="my-3">
+  <table class="table me-2 container">
+    <tr>
+      <th>Question</th>
+      <th>Posted By</th>
+      <th>Topic</th>
+      <th>Get Answers</th>
+    </tr>
+
+    <tr *ngFor="let question of questions">
+      <td>{{ question.question }}</td>
+      <td>{{ question.user.name }}</td>
+      <td>{{ question.topic }}</td>
+
+      <td>
+        <button
+          class="btn my-2 btn-outline-success"
+          id="{{ question.id }}"
+          (click)="sendQuestionToGetAnswer(question.id)"
+        >
+          Get Answers
+        </button>
+      </td>
+    </tr>
+  </table>
+</div> -->
+
+
+<br />
+<head>
+  <style>
+  #question {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin-left:80px ;
+
+  }
+  
+  #question td, #question th, #question td{
+    border: 5px solid #ddd;
+    padding: 2px;
+    align-content: center;  }
+  
+  #question tr:nth-child(even){background-color: #adee6fce; align-content: center;}
+  
+  #question tr:hover {background-color: rgb(103, 206, 171);}
+  
+
+  #question th {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    background-color: #5d0877;
+    color: white;
+  }
+  </style>
+  </head>
+
+<div class="btn-group" style="margin-left:6%;">
+  <button type="button" class="btn btn-primary">Choose Topic</button>
+  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item"><button (click)="getQuestions('All')" class="btn btn-primary btn-sm" style="width:120px;">All</button></a></li>
+    <li><a class="dropdown-item"><button (click)="getQuestions('Angular')" class="btn btn-primary btn-sm" style="width:120px;">Angular</button></a></li>
+    <li><a class="dropdown-item"><button (click)="getQuestions('springboot')" class="btn btn-primary btn-sm" style="width:120px;">springboot</button></a></li>
+    <li><a class="dropdown-item"><button (click)="getQuestions('ReactJs')" class="btn btn-primary btn-sm"style="width:120px;">ReactJs</button></a></li>
+    <li><a class="dropdown-item"><button (click)="getQuestions('Hadoop')" class="btn btn-primary btn-sm" style="width:120px;">Hadoop</button></a></li>
+    <li><a class="dropdown-item"><button (click)="getQuestions('Others')" class="btn btn-primary btn-sm" style="width:120px;">Others</button></a></li>
+
+  </ul>
+</div>
+<div class="my-1">
+  <table id="question" class="styled-table" style="border: 2px;">
+    <thead >
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col">Posted By</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Get Answers</th>
+    </tr>
+    </thead>
+
+    <tr *ngFor="let question of questions">
+      <td>{{ question.question }}</td>
+      <td>{{ question.user.name }}</td>
+      <td>{{ question.topic }}</td>
+
+      <td>
+        <button
+          class="btn btn-success btn-sm"
+          id="{{ question.id }}"
+          (click)="sendQuestionToGetAnswer(question.id)"
+        >
+          Get Answers
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

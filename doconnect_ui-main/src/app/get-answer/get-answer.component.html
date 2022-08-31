@@ -1,0 +1,219 @@
+<app-nav-bar> </app-nav-bar>
+<!-- <div class="container my-3">
+  <h3 style="text-align: center">Welcome {{ user.name }}</h3>
+</div>
+<div class="container" *ngIf="alreadyAnswered">
+  <mat-drawer-container style="width: 600px;margin-left: 300px; font-family: cursive;">
+    <mat-drawer-content>
+      <div id="formid" *ngFor="let answer of answers" style="width: fit-content;">
+        <mat-card class="questions" >
+          <mat-card-title>Question  {{ answer.question.question }}</mat-card-title>
+          <mat-card-content>
+            <p>Answer   {{ answer.answer }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div>
+              <span class="questionTag"
+                ><label>{{ answer.question.topic }}</label></span
+              >
+              <span class="questionTag"
+                >Asked By {{ answer.question.user.name }}</span
+              >
+              <span class="answer"
+                >Answered By {{ answer.answerUser.name }}</span
+              >
+            </div>
+            <div class="accordion" id="accordionExample1">
+              <div class="yourAnswer">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne"
+                    >
+                      Add your answer here.
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample1"
+                  >
+                    <div class="accordion-body">
+                      <form
+                        #addAnswer="ngForm"
+                        (ngSubmit)="giveAnswer(addAnswer.value)"
+                      >
+                        <div class="mb-3 padding">
+                          <textarea
+                            ngModel
+                            name="answer"
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            placeholder="Write your answer"
+                            required
+                          ></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                          Submit answer
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div> -->
+
+<!-- <div class="container" *ngIf="firstAnswer">
+  <div class="accordion" id="accordionExample1">
+    <div class="yourAnswer">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Add your answer here.
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample1">
+          <div class="accordion-body">
+            <form #addAnswer="ngForm" (ngSubmit)="giveAnswer(addAnswer.value)">
+              <div class="mb-3 padding">
+                <textarea ngModel name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Write your answer" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Submit answer
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="card mb-2" style="max-width: 900px; margin: auto;">
+  <div class="row no-gutters">
+    <div class="col-md-4" style="margin: auto;">
+      <img src="\assets\q.jpg" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <div class="container" *ngIf="firstAnswer">
+          <div class="accordion" id="accordionExample1">
+            <div class="yourAnswer">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Add your answer here.
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample1">
+                  <div class="accordion-body">
+                    <form #addAnswer="ngForm" (ngSubmit)="giveAnswer(addAnswer.value)">
+                      <div class="mb-3 padding">
+                        <textarea ngModel name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                          placeholder="Write your answer" required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">
+                        Submit answer
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container" *ngIf="alreadyAnswered">
+          <div *ngFor="let answer of answers" style="width: fit-content;">
+            <h5 class="card-title">Question {{ answer.question.question }}</h5>
+
+            <p class="card-text">Answer {{ answer.answer }}</p>
+            <p class="card-text"><small class="text-muted">Topic {{ answer.question.topic }}</small></p>
+          </div>
+
+
+          <!-- <div *ngIf="firstAnswer">
+            <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            Add your answer here.
+          </button>
+          </div> -->
+
+
+
+          <div class="accordion-body">
+            <form #addAnswer="ngForm" (ngSubmit)="giveAnswer(addAnswer.value)">
+              <div class="mb-3 padding">
+                <textarea ngModel name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Write your answer" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Submit answer
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- 
+          <div class="container" *ngIf="firstAnswer">
+            <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            Add your answer here.
+          </button>
+          </div>
+
+          <div class="accordion-body">
+            <form #addAnswer="ngForm" (ngSubmit)="giveAnswer(addAnswer.value)">
+              <div class="mb-3 padding">
+                <textarea ngModel name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Write your answer" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Submit answer
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+</div>

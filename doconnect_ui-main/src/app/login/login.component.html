@@ -1,0 +1,55 @@
+<app-nav-bar> </app-nav-bar>
+<div class="body">
+  <div class="login-form" style="width:50%; margin: 25px auto">
+    <mat-card style="border: 5px solid burlywood">
+    <div class="container text-center">
+      <img class="img-fluid" style="width: 100px;" src="\assets\password.png">
+      <h1 class="display-4 text-center bg-light mb-5 font-weight-bold">Login Here !!</h1>
+    </div>
+    
+    <form
+      ngNativeValidate
+      #userlogin="ngForm"
+      (ngSubmit)="userLogin(userlogin.value)"
+    >
+        <!-- <label for="login" class="container"> <h2>Login</h2> </label><br /> -->
+        <label for="exampleInputEmail1" class="form-label">Email </label>
+        <input
+          ngModel
+          name="email"
+          type="email"
+          class="form-control"
+          placeholder="abc@gmail.com"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          required
+        />
+        <br />
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          ngModel
+          name="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          required
+        />
+      <!-- <div class="loginButton">
+        <button type="submit" class="btn btn-outline-primary">Login</button>
+      </div> -->
+      <div class="container text-center" style="margin-top: 25px;">
+        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button style="margin-left: 10px;" type="reset" mat-raised-button color="accent">Reset</button>
+      </div>
+    </form>
+    <a
+      routerLink="/register"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <p>New to DoConnect? Register here.</p></a
+    >
+
+    </mat-card>
+  </div>
+</div>

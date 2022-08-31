@@ -1,0 +1,98 @@
+<app-nav-bar> </app-nav-bar>
+<div class="body">
+  <div class="container" style="margin-top: 50px;">
+  <mat-card style="border: 15px solid burlywood">
+  <div class=" container text-center">
+      <img style="width: 100px" src="../../../assets/register.png" alt="">
+  </div>
+    <h1 class="display-4 text-center bg-light mb-5 font-weight-bold">Registration Here !!</h1>
+  
+    <form
+      ngNativeValidate
+      #userregister="ngForm"
+      (ngSubmit)="userRegister(userregister.value)"
+    >
+      <!-- <label for="register" class="container"> <h2>Register</h2> </label><br /> -->
+      <div class="row g-3">
+        <div class="col">
+          <input
+            ngModel
+            name="fName"
+            type="text"
+            class="form-control"
+            placeholder="First name"
+            aria-label="First name"
+            required
+          />
+        </div>
+        <div class="col">
+          <input
+            ngModel
+            name="lName"
+            type="text"
+            class="form-control"
+            placeholder="Last name"
+            aria-label="Last name"
+            required
+          />
+        </div>
+      </div>
+      <br />
+      <div class="mb-3">
+        <input
+          ngModel
+          name="email"
+          type="email"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          ngModel
+          name="password"
+          type="password"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Password"
+          required
+          minlength="8"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          ngModel
+          name="mNumber"
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder=" Mobile Number"
+          required
+          maxlength="10"
+          minlength="10"
+        />
+      </div>
+      <!-- <div class="registerButton">
+        <button type="submit" class="btn btn-outline-primary me-2">
+          Register
+        </button>
+        <input class="btn btn-outline-primary" type="reset" value="Reset" />
+      </div> -->
+      <div class="container text-center mt">
+        <button type="submit" mat-raised-button color="primary">SignUp</button>
+        <button style="margin-left: 20px;" type="reset" mat-raised-button color="accent">Clear</button>
+      </div>
+    </form>
+    <a
+      routerLink="/login"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <p>Already a member? Login here.</p>
+    </a>
+  </mat-card>
+  </div>
+</div>
+

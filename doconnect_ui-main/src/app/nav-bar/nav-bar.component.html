@@ -1,0 +1,169 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">DoConnect</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul> -->
+      <!--- search content method for testing purpose-->
+      <!-- <div class="container text-center">
+      <mat-card style="border: 5px solid purple;">
+      <div class="form-inline text-center">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Search"
+          size="280pc" 
+          width="100%"
+          #search
+          (keyup.enter)="getValue(search.value)"
+          aria-label="Search"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+    </mat-card>
+    </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="user.id == 0">
+          <a
+            routerLink="/login"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            class="btn btn-outline-primary me-2 my-2"
+            role="button"
+          >
+            Log in
+          </a>
+        </li>
+        <li *ngIf="user.id == 0">
+          <a
+            routerLink="/register"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            class="btn btn-outline-primary me-2 my-2"
+            role="button"
+          >
+            Sign up
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" *ngIf="isSearched">
+  <table id="table" class="table table-striped text-center h4" style="font-size: 15px;">
+    <thead>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col">Posted By</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Get Answer</th>
+    </tr>
+    </thead>
+    
+    <tr *ngFor="let question of questions">
+      <td>{{ question.question }}</td>
+      <td>{{ question.user.name }}</td>
+      <td>{{ question.topic }}</td>
+      <td>
+        <button
+          class="btn btn-outline-success"
+          id="{{ question.id }}"
+          (click)="sendQuestionToGetAnswer(question.id)"
+        >
+          Get Answers
+        </button>
+      </td>
+    </tr>
+  </table>
+</div> --> 
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: -10px; " >
+  <div class="container-fluid" style="background-color:rgb(173, 198, 212); height: 80px;">
+    <a class="navbar-brand" href="" >   DoConnect</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <!--- search content method for testing purpose-->
+      <div class="input-group flex-nowrap w-50 p-1">
+        <input type="search"  style="width:200px ;margin-left: 400px;" placeholder="Search" #search aria-label="Search"
+          aria-describedby="addon-wrapping" />
+      </div>
+
+      <!-- (keyup.enter)="getValue(search.value)" -->
+      <button class="btn btn-primary btn-sm" (click)="getValue(search.value)">Search</button>
+
+
+
+
+
+      <ul class="nav navbar-nav navbar-right" style="margin-left: 5px;">
+        <li *ngIf="isLogged==null">
+          <a routerLink="/admin-login" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="btn btn-primary btn-sm" role="button">
+            Admin Login
+          </a>
+        </li>
+
+        <li *ngIf="isLogged==null" style="margin-left: 5px;">
+          <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="btn btn-primary btn-sm" role="button">
+            User Login
+          </a>
+        </li>
+        <li *ngIf="isLogged==null" style="margin-left: 5px;">
+          <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="btn btn-primary btn-sm" role="button">
+            Sign up
+          </a>
+        </li>
+        <li class="btn btn-outline-secondary border border-0 me-2 my-2" style="margin-left: 5px;">
+          <span>{{userName}}</span>
+        </li>
+        <li *ngIf="isLogged=='1'" style="margin-right: 5px;">
+          <button class="btn btn-danger btn-sm" style="margin-top: 10px;"  (click)="userLogout()" type="button">
+            LogOut
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" *ngIf="isSearched">
+  <table class="table table-striped">
+    <tr>
+      <th>Question</th>
+      <th>Posted By</th>
+      <th>Topic</th>
+      <th>Get Answer</th>
+    </tr>
+
+    <tr *ngFor="let question of questions">
+      <td>{{ question.question }}</td>
+      <td>{{ question.user.name }}</td>
+      <td>{{ question.topic }}</td>
+      <td>
+        <button class="btn btn-outline-success" id="{{ question.id }}" (click)="sendQuestionToGetAnswer(question.id)">
+          Get Answers
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
