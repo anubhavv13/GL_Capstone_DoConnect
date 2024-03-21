@@ -8,10 +8,12 @@ Frontend –
   Material UI (Sweetaleat2, MatCard, MatTable etc.)
   HTML,CSS
   Bootstrap Grid
+  <br>
 Backend –
   Java
   Spring Boot
   Data JPA
   Microservices
+  <br>
 Database –
   Mysql
